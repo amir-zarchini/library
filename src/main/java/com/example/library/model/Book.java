@@ -39,6 +39,8 @@ public class Book {
 
     private String edition;
 
+    private Integer count;
+
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
