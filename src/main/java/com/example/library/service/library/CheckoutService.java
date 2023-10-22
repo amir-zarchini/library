@@ -9,6 +9,9 @@ import java.util.UUID;
 @Service
 public class CheckoutService {
     public ResponseEntity<Checkout> checkout(UUID bookId, Long userId) {
+        if (bookId == null || userId == null) {
+            throw new NullPointerException("خطا در پارامترهای ورودی");
+        }
         return null;
     }
 }

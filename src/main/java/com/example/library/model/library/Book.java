@@ -49,6 +49,6 @@ public class Book {
             },
             mappedBy = "books")
     @JsonIgnore
-    private Set<User> users = new HashSet<>();
+    private Set<Membership> memberships = new HashSet<>();
 
 }
