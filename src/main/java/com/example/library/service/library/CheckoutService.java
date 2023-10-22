@@ -24,24 +24,6 @@ public class CheckoutService {
     private final BookRepository bookRepository;
     private final MembershipRepository membershipRepository;
     public ResponseEntity<Checkout> checkout(Long bookId, Long membershipId) {
-        checkValidation(bookId, membershipId);
-        Checkout checkout = createCheckout();
-        try {
-            return ResponseEntity.ok(checkoutRepository.save(checkout));
-        } catch (Exception e) {
-            throw new ApplicationContextException("خطا در save درخواست");
-        }
-    }
-
-    private Checkout createCheckout() {
-        Checkout checkout = new Checkout();
-        checkout.setCheckoutDate(new Date());
-        checkout.setExpirationDate(new Date(checkout.getCheckoutDate().getTime()
-                + TimeUnit.DAYS.toDays(14)));
-        return checkout;
-    }
-
-    private void checkValidation(Long bookId, Long membershipId) {
         if (bookId == null || membershipId == null) {
             throw new NullPointerException("خطا در پارامترهای ورودی");
         }
@@ -53,5 +35,22 @@ public class CheckoutService {
         if (book.isEmpty() || membership.isEmpty()){
             throw new NullPointerException("موردی یافت نشد");
         }
+        Checkout checkout = createCheckout(book, membership);
+        try {
+            return ResponseEntity.ok(checkoutRepository.save(checkout));
+        } catch (Exception e) {
+            throw new ApplicationContextException("خطا در save درخواست");
+        }
+    }
+
+    private Checkout createCheckout(Optional<Book> book, Optional<Membership> membership) {
+        Checkout checkout = new Checkout();
+        checkout.setCheckoutDate(new Date());
+        checkout.setExpirationDate(new Date(checkout.getCheckoutDate().getTime()
+                + TimeUnit.HOURS.toMillis(240)));
+        checkout.setIsReserved(false);
+        checkout.setMembership(membership.orElse(null));
+        checkout.setBook(book.orElse(null));
+        return checkout;
     }
 }

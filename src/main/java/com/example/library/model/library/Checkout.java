@@ -27,8 +27,8 @@ public class Checkout {
     private Book book;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "membership_id")
+    private Membership membership;
 
     private Date checkoutDate;
 
