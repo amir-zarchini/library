@@ -20,7 +20,7 @@ public class Checkout {
 
     @Id
     @GeneratedValue
-    private UUID id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_id")

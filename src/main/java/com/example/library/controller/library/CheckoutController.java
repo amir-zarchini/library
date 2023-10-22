@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
-
 @RestController
 @RequiredArgsConstructor
 public class CheckoutController {
@@ -19,8 +17,8 @@ public class CheckoutController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/api/library/checkout/{bookId}/{membershipId}")
-    public ResponseEntity<Checkout> checkout(@PathVariable("bookId") UUID bookId,
-                                             @PathVariable("membershipId") UUID membershipId) {
+    public ResponseEntity<Checkout> checkout(@PathVariable("bookId") Long bookId,
+                                             @PathVariable("membershipId") Long membershipId) {
         return service.checkout(bookId, membershipId);
     }
 }

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -27,7 +26,7 @@ public class MembershipController {
 
     @GetMapping("/api/library/membership/find/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Optional<Membership>> findById(@PathVariable("id") UUID id) {
+    public ResponseEntity<Optional<Membership>> findById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(membershipRepository.findById(id));
     }
 
@@ -45,7 +44,7 @@ public class MembershipController {
 
     @DeleteMapping("/api/library/membership/delete/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> deleteMembership(@PathVariable("id") UUID id) {
+    public ResponseEntity<?> deleteMembership(@PathVariable("id") Long id) {
         try{
             membershipRepository.deleteById(id);
             return ResponseEntity.ok(new MessageResponse("delete successful!"));

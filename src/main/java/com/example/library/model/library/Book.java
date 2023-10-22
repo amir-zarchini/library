@@ -20,7 +20,7 @@ public class Book {
     @Id
     @GeneratedValue
     @Column(length = 16)
-    private UUID id;
+    private Long id;
 
     private String title;
 

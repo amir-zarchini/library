@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -24,7 +23,7 @@ public class CheckoutService {
     private final CheckoutRepository checkoutRepository;
     private final BookRepository bookRepository;
     private final MembershipRepository membershipRepository;
-    public ResponseEntity<Checkout> checkout(UUID bookId, UUID membershipId) {
+    public ResponseEntity<Checkout> checkout(Long bookId, Long membershipId) {
         checkValidation(bookId, membershipId);
         Checkout checkout = createCheckout();
         try {
@@ -42,7 +41,7 @@ public class CheckoutService {
         return checkout;
     }
 
-    private void checkValidation(UUID bookId, UUID membershipId) {
+    private void checkValidation(Long bookId, Long membershipId) {
         if (bookId == null || membershipId == null) {
             throw new NullPointerException("خطا در پارامترهای ورودی");
         }
