@@ -1,4 +1,4 @@
-package com.example.library.model;
+package com.example.library.model.security;
 
 public enum ERole {
     ROLE_USER,

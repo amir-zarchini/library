@@ -1,8 +1,6 @@
 package com.example.library.security;
 
-import com.example.springbootsecurityjwt.security.jwt.AuthEntryPointJwt;
-import com.example.springbootsecurityjwt.security.jwt.AuthTokenFilter;
-import com.example.springbootsecurityjwt.security.service.UserDetailsServiceImpl;
+import com.example.library.service.security.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

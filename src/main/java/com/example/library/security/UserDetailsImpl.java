@@ -1,6 +1,6 @@
-package com.example.library.security.service;
+package com.example.library.security;
 
-import com.example.springbootsecurityjwt.model.User;
+import com.example.library.model.security.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

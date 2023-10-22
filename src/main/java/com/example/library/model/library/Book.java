@@ -1,5 +1,6 @@
-package com.example.library.model;
+package com.example.library.model.library;
 
+import com.example.library.model.security.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,7 +14,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity
-@Table(name = "book")
+@Table(name = "library")
 @Getter
 @Setter
 @AllArgsConstructor

@@ -1,9 +1,9 @@
-package com.example.library.security.service;
+package com.example.library.service.security;
 
 import com.example.library.exception.RefreshTokenException;
-import com.example.library.model.RefreshToken;
-import com.example.library.repository.RefreshTokenRepository;
-import com.example.library.repository.UserRepository;
+import com.example.library.model.security.RefreshToken;
+import com.example.library.repository.security.RefreshTokenRepository;
+import com.example.library.repository.security.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

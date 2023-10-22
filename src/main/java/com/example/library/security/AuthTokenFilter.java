@@ -1,6 +1,6 @@
-package com.example.library.security.jwt;
+package com.example.library.security;
 
-import com.example.library.security.service.UserDetailsServiceImpl;
+import com.example.library.service.security.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -42,7 +42,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
                 }
 
         } catch (Exception e) {
-            logger.error("Cannot set user authentication: {}", e);
+            logger.error("Cannot set security authentication: {}", e);
         }
 
         filterChain.doFilter(request, response);

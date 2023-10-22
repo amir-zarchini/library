@@ -1,5 +1,6 @@
-package com.example.library.model;
+package com.example.library.model.security;
 
+import com.example.library.model.security.ERole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

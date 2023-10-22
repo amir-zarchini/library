@@ -1,4 +1,4 @@
-package com.example.library.model;
+package com.example.library.model.library;
 
 public enum Gender {
 

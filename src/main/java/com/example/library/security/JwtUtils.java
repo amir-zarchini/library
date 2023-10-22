@@ -1,6 +1,5 @@
-package com.example.library.security.jwt;
+package com.example.library.security;
 
-import com.example.library.security.service.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;

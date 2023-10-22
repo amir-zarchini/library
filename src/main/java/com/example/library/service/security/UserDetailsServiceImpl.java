@@ -1,7 +1,8 @@
-package com.example.library.security.service;
+package com.example.library.service.security;
 
-import com.example.library.model.User;
-import com.example.library.repository.UserRepository;
+import com.example.library.model.security.User;
+import com.example.library.repository.security.UserRepository;
+import com.example.library.security.UserDetailsImpl;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

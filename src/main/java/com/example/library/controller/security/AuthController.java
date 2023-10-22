@@ -1,11 +1,11 @@
-package com.example.library.controller;
+package com.example.library.controller.security;
 
 import com.example.library.payload.request.LoginRequest;
 import com.example.library.payload.request.RefreshTokenRequest;
 import com.example.library.payload.request.SignupRequest;
 import com.example.library.payload.response.JwtResponse;
 import com.example.library.payload.response.MessageResponse;
-import com.example.library.service.AuthService;
+import com.example.library.service.security.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

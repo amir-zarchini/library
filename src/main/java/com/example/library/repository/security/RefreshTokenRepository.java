@@ -1,7 +1,7 @@
-package com.example.library.repository;
+package com.example.library.repository.security;
 
-import com.example.library.model.RefreshToken;
-import com.example.library.model.User;
+import com.example.library.model.security.RefreshToken;
+import com.example.library.model.security.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;

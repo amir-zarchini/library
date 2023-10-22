@@ -1,4 +1,4 @@
-package com.example.library.model;
+package com.example.library.model.security;
 
 import jakarta.persistence.*;
 import lombok.Data;
