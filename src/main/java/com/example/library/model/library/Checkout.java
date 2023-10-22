@@ -33,4 +33,6 @@ public class Checkout {
     private Date checkoutDate;
 
     private Date expirationDate;
+
+    private Boolean isReserved;
 }

@@ -19,9 +19,9 @@ public class CheckoutController {
     private final CheckoutService service;
 
 
-    @PostMapping("/checkout/{bookId}/{userId}")
+    @PostMapping("/checkout/{bookId}/{membershipId}")
     public ResponseEntity<Checkout> checkout(@PathVariable("bookId") UUID bookId,
-                                             @PathVariable("userId") Long userId) {
-        return service.checkout(bookId, userId);
+                                             @PathVariable("membershipId") UUID membershipId) {
+        return service.checkout(bookId, membershipId);
     }
 }
