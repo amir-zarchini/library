@@ -1,7 +1,5 @@
 package com.example.library.model.library;
 
-import com.example.library.model.security.User;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,12 +7,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
-@Table(name = "library")
+@Table(name = "book")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -41,14 +37,4 @@ public class Book {
     private String edition;
 
     private Integer count;
-
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
-            mappedBy = "books")
-    @JsonIgnore
-    private Set<Membership> memberships = new HashSet<>();
-
 }

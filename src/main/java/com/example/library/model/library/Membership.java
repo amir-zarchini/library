@@ -1,11 +1,12 @@
 package com.example.library.model.library;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "membership")
@@ -39,10 +40,4 @@ public class Membership {
     @Enumerated(EnumType.STRING)
     @Column(length = 10)
     private Gender gender;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "membership_books",
-            joinColumns = { @JoinColumn(name = "membership_id") },
-            inverseJoinColumns = { @JoinColumn(name = "book_id") })
-    private Set<Book> books = new HashSet<>();
 }
